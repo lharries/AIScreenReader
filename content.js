@@ -1,4 +1,4 @@
-function getImageCaptions(dataToSend) {
+function getImageCaption(element) {
     var xhr = new XMLHttpRequest();
 
     // handle the response
@@ -7,19 +7,8 @@ function getImageCaptions(dataToSend) {
             console.log(xhr.responseText);
 
             try {
-                /*
-                Response format:
-                {
-                    url: alt,
-                    url2: atl2
-                }
-                 */
-
                 var response = JSON.parse(xhr.responseText);
-
-                for (var el in imgElements) {
-                    imgElements[el].alt = response[imgElements[el].src] || "No caption found"
-                }
+                element.alt = response.alt;
 
             } catch (err) {
                 console.error("Unable to parse", err);
@@ -27,26 +16,27 @@ function getImageCaptions(dataToSend) {
             // get the array of captions from the response text
         }
     }
-    xhr.open('POST', 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699', true);
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xhr.send(dataToSend);
+    xhr.open('POST', 'https://np3qle1w72.execute-api.eu-west-1.amazonaws.com/prod/imageAnalysisFinal', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    var obj = {image: element.src};
+    xhr.send(JSON.stringify(obj));
 }
 
 function getImages() {
     var images = document.getElementsByTagName('img');
-    var srcList = [];
     // get all the images
     for (var i = 0; i < images.length; i++) {
         if ((!images[i].alt || !images[i].alt.length) && images[i].src.length) {
             imgElements.push(images[i]);
-            srcList.push({url: images[i].src, alt: null});
         }
     }
-    return srcList;
 }
 
 var imgElements = [];
-var srcList = getImages();
-// getImageCaptions(srcList)
-console.log(srcList);w
+getImages();
+
+for (var el in imgElements) {
+    getImageCaption(imgElements[el])
+}
+
 console.log(imgElements);
