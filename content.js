@@ -4,6 +4,7 @@ function getImageCaption(element) {
     // handle the response
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log(element);
             console.log(xhr.responseText);
 
             try {
@@ -40,3 +41,4 @@ for (var el in imgElements) {
 }
 
 console.log(imgElements);
+
