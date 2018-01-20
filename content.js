@@ -1,8 +1,29 @@
 function getImageCaptions(dataToSend) {
     var xhr = new XMLHttpRequest();
+
+    // handle the response
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            console.log(alt, xhr.responseText);
+            console.log(xhr.responseText);
+
+            try {
+                /*
+                Response format:
+                {
+                    url: alt,
+                    url2: atl2
+                }
+                 */
+
+                var response = JSON.parse(xhr.responseText);
+
+                for (var el in imgElements) {
+                    imgElements[el].alt = response[imgElements[el].src] || "No caption found"
+                }
+
+            } catch (err) {
+                console.error("Unable to parse", err);
+            }
             // get the array of captions from the response text
         }
     }
@@ -16,14 +37,16 @@ function getImages() {
     var srcList = [];
     // get all the images
     for (var i = 0; i < images.length; i++) {
-        if ((!images[i].alt ||  !images[i].alt.length) && images[i].src.length) {
-            console.log(images[i])
+        if ((!images[i].alt || !images[i].alt.length) && images[i].src.length) {
+            imgElements.push(images[i]);
             srcList.push({url: images[i].src, alt: null});
         }
     }
     return srcList;
 }
 
-var images = getImages();
-console.log(images);
-// addImageCaption();
+var imgElements = [];
+var srcList = getImages();
+// getImageCaptions(srcList)
+console.log(srcList);w
+console.log(imgElements);
