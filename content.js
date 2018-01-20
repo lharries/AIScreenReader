@@ -39,8 +39,36 @@ function getImages() {
     }
 }
 
+// deal with microsofts rate limiter
+function limitToTen(arr) {
+    debugger;
+    var arrToSplice = arr;
+    var slots = [];
+    while (arrToSplice.length) {
+        slots.push(arrToSplice.splice(0, 10))
+    }
+
+    var timeout = 0;
+    for (var s in slots) {
+        setTimeout(function () {
+            var elements = slots[s];
+            for (var el in elements) {
+                // disallow pictures with numbers at the end to stop excess images on medium
+                if (elements[el].src.match(/(https?:\/\/.*[^0-9][^0-9]$)/i)) {
+                    console.log(elements[el])
+                    getImageCaption(elements[el]);
+                }
+            }
+
+        }, timeout);
+        timeout += 11000
+    }
+}
+
 function init() {
     getImages();
+
+    limitToTen(imgElements);
 
     for (var el in imgElements) {
         // disallow pictures with numbers at the end to stop excess images on medium
