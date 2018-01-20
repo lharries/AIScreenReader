@@ -9,9 +9,15 @@ function getImageCaption(element) {
 
             try {
                 var response = JSON.parse(xhr.responseText);
-                element.alt = response.alt;
+                if (response && response.alt) {
+                    element.alt = response.alt;
+                }
 
             } catch (err) {
+                // setTimeout(function () {
+                //     console.log("running timeout")
+                //     getImageCaption(element)
+                // }, 3000);
                 console.error("Unable to parse", err);
             }
             // get the array of captions from the response text
@@ -33,12 +39,25 @@ function getImages() {
     }
 }
 
-var imgElements = [];
-getImages();
+function init() {
+    getImages();
 
-for (var el in imgElements) {
-    getImageCaption(imgElements[el])
+    for (var el in imgElements) {
+        if (imgElements[el].src.match(/(https?:\/\/.*)/i)) {
+            getImageCaption(imgElements[el]);
+        }
+    }
 }
 
-console.log(imgElements);
+console.log("running");
+var imgElements = [];
+init();
+
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        if (request.message === "clicked_browser_action") {
+            init();
+        }
+    }
+);
 
