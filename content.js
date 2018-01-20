@@ -43,7 +43,8 @@ function init() {
     getImages();
 
     for (var el in imgElements) {
-        if (imgElements[el].src.match(/(https?:\/\/.*)/i)) {
+        // disallow pictures with numbers at the end to stop excess images on medium
+        if (imgElements[el].src.match(/(https?:\/\/.*[^0-9][^0-9]$)/i)) {
             getImageCaption(imgElements[el]);
         }
     }
