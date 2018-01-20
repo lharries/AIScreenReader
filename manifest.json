@@ -5,6 +5,8 @@
   "background": {
     "scripts": ["background.js"]
   },
+  "name": "ScreenReader",
+  "version": "0.1",
   "content_scripts": [
     {
       "matches": [
@@ -15,5 +17,8 @@
   ],
   "browser_action": {
     "default_icon": "icon.png"
-  }
+  },
+  "permissions": [
+    "https://www.googleapis.com/*"
+  ]
 }
