@@ -9,7 +9,7 @@ function getImageCaption(element) {
 
             try {
                 var response = JSON.parse(xhr.responseText);
-                if (response && response.alt) {
+                if (response && response.alt && response.alt.length) {
                     element.alt = response.alt;
                 }
 
