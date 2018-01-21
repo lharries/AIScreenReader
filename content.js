@@ -4,13 +4,13 @@ function getImageCaption(element) {
     // handle the response
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            console.log(element);
-            console.log(xhr.responseText);
 
             try {
                 var response = JSON.parse(xhr.responseText);
                 if (response && response.alt && response.alt.length) {
                     element.alt = response.alt;
+                    console.log(element);
+                    console.log(response.alt);
                 }
 
             } catch (err) {
@@ -18,7 +18,7 @@ function getImageCaption(element) {
                 //     console.log("running timeout")
                 //     getImageCaption(element)
                 // }, 3000);
-                console.error("Unable to parse", err);
+                // console.error("Unable to parse", err);
             }
             // get the array of captions from the response text
         }

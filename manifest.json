@@ -1,6 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "My Cool Extension",
+  "name": "RayAI Screen Reader",
+  "short_name": "RayAI",
   "version": "0.1",
   "background": {
     "scripts": ["background.js"]
