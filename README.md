@@ -3,6 +3,10 @@
 # Ray AI - The Smart Screen reader assistant
 ## **:tada: Winner of the Allia Serious Impact Hackathon November 2017 :tada:**
 
+## Demo
+Video: [Youtube Demo](https://www.youtube.com/watch?v=SesPIkT-Sn8)
+
+
 ## Inspiration
 Millions of internet users are visually impaired. They rely on Screen Readers to convey what is on the website. Screen Readers rely on the "alt tags" to provide captions for images. However, these "alt tags" are often missing or inaccurate, especially for user uploaded content such as on Twitter or Reddit.
 
