@@ -13,6 +13,8 @@ RayAI utilises cutting edge machine learning to add captions to images, better i
 
 This Chrome extension uses cutting edge Machine Learning powered by Microsoft Cognitive Services to understand what's in the image. A combination of object recognition, emotion recognition and OCR is used to provide the most detailed image captions possible.
 
+The Chrome extension connects to AWS where we use Lambda functions and DynamoDB to generate the descriptions.
+
 ## What's next for RayAI - Screen Reader Assistant
 
 We are soon to launch on the chrome store!
@@ -20,3 +22,5 @@ We are soon to launch on the chrome store!
 Features we hope to add:
 - Cache the top 30 most visited websites daily!
 - Link in with Twitter, Reddit etc. to automatically tag user uploaded content
+
+!(The team)[26910452_10211013117391959_1735074432164593266_o.jpg]
