@@ -18,12 +18,14 @@ RayAI utilises cutting edge machine learning to add captions to images, better i
 Video: [Youtube Demo](https://www.youtube.com/watch?v=SesPIkT-Sn8)
 
 Example: 
-![Cat]()
-Description
+![Cat](catmeme.png)
+
+*A cat wearing a tie*
+
 ![Gif]()
 
 Descriptive tags:
-![Image]()
+![Image](descriptivetags.png)
 
 ## How we built it
 This Chrome extension uses cutting edge Machine Learning powered by Microsoft Cognitive Services to understand what's in the image. A combination of object recognition, emotion recognition and OCR is used to provide the most detailed image captions possible.
