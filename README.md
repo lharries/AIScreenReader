@@ -20,11 +20,11 @@ Video: [Youtube Demo](https://www.youtube.com/watch?v=SesPIkT-Sn8)
 Example: 
 ![Cat](catmeme.png)
 
-*A cat wearing a tie*
+Generated description: *A cat wearing a suit and tie  the text says: WHAT AM I DOING HERE*
 
-![Gif]()
+![Gif](example2.gif)
 
-Descriptive tags:
+Examples of descriptive generated tags:
 ![Image](descriptivetags.png)
 
 ## How we built it
