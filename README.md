@@ -25,7 +25,7 @@ Generated description: *A cat wearing a suit and tie  the text says: WHAT AM I D
 ![Gif](example2.gif)
 
 Examples of descriptive generated tags:
-![Image](descriptivetags.png)
+![Image](descriptivetags2.png)
 
 ## How we built it
 This Chrome extension uses cutting edge Machine Learning powered by Microsoft Cognitive Services to understand what's in the image. A combination of object recognition, emotion recognition and OCR is used to provide the most detailed image captions possible.
