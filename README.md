@@ -1,7 +1,7 @@
 ![Ray AI Logo](RayAI-logo.png)
 
 # Ray AI - The Smart Screen reader assistant
-## **:tada: Winner of the Allia Serious Impact Hackathon November 2017 :tada:**
+## **:tada: Winner of the HackCambridge Microsoft Prize 2018 :tada:**
 
 ## Summary
 
