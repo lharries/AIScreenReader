@@ -23,4 +23,12 @@ Features we hope to add:
 - Cache the top 30 most visited websites daily!
 - Link in with Twitter, Reddit etc. to automatically tag user uploaded content
 
+## The Team
+
+Created by:
+- Marcin Kolaszewski
+- Filip Kozera
+- Luke Harries
+- Mateusz Staniszewski
+
 ![The team](26910452_10211013117391959_1735074432164593266_o.jpg)
