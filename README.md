@@ -17,7 +17,7 @@ RayAI utilises cutting edge machine learning to add captions to images, better i
 
 Video: [Youtube Demo](https://www.youtube.com/watch?v=SesPIkT-Sn8)
 
-Example: 
+Example:  
 ![Cat](catmeme.png)
 
 Generated description: *A cat wearing a suit and tie  the text says: WHAT AM I DOING HERE*
